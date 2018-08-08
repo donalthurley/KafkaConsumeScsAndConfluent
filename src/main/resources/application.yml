@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: kafka
+  kafka:
+    consumer:
+      properties.schema.registry.url: http://192.168.99.100:8081
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: PLAINTEXT://192.168.99.100:9092
+#          configuration:
+#            specific:
+#              avro:
+#                reader: true
+#            key:
+#              deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#            value:
+#              deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+
+      bindings:
+        inputConfluent:
+          contentType: application/*+avro
+          destination: confluent-destination
+          group: input-confluent-group
+        inputScs:
+          contentType: application/*+avro
+          destination: scs-destination
+          group: input-scs-group

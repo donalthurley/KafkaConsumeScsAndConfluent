@@ -1,0 +1,9 @@
+{
+ "namespace": "com.example.kafka.avro",
+ "type": "record",
+ "name": "InputConfluent",
+ "fields": [
+     {"name": "confluentName", "type": "string", "default": "null"},
+	 {"name": "confluentDescription", "type": "string", "default": "null"}
+ ]
+}

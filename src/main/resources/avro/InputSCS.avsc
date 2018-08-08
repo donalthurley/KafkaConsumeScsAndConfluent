@@ -1,0 +1,9 @@
+{
+ "namespace": "com.example.kafka.avro",
+ "type": "record",
+ "name": "InputSCS",
+ "fields": [
+     {"name": "scsName", "type": "string", "default": "null"},
+	 {"name": "scsDescription", "type": "string", "default": "null"}
+ ]
+}

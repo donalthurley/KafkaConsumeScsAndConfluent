@@ -9,14 +9,18 @@ spring:
       kafka:
         binder:
           brokers: PLAINTEXT://192.168.99.100:9092
-#          configuration:
-#            specific:
-#              avro:
-#                reader: true
-#            key:
-#              deserializer: org.apache.kafka.common.serialization.StringDeserializer
-#            value:
-#              deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+          useNativeDecoding: true
+        bindings:
+          inputConfluent:
+            consumer:
+              configuration:
+                specific:
+                  avro:
+                    reader: true
+                key:
+                  deserializer: org.apache.kafka.common.serialization.StringDeserializer
+                value:
+                  deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
 
       bindings:
         inputConfluent:

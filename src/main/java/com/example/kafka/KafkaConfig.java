@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class KafkaConfig {
 
-    @Value("${spring.kafka.consumer.properties.schema.registry.url}")
+    @Value("${spring.cloud.stream.schemaRegistryClient.endpoint}")
     private String endpoint;
 
     @Bean

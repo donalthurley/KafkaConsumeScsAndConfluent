@@ -21,9 +21,15 @@ spring:
       bindings:
         inputConfluent:
           contentType: application/*+avro
-          destination: confluent-destination
+          destination: input-confluent-destination
           group: input-confluent-group
         inputScs:
           contentType: application/*+avro
-          destination: scs-destination
+          destination: input-scs-destination
           group: input-scs-group
+        outputScs:
+          contentType: application/*+avro
+          destination: output-scs-destination
+        outputConfluent:
+          contentType: application/*+avro
+          destination: output-confluent-destination

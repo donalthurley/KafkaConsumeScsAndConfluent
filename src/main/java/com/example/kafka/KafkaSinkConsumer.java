@@ -32,9 +32,8 @@ public class KafkaSinkConsumer {
                 .setConfluentDescription(inputConfluent.getConfluentDescription())
                 .build();
 
-        kafkaSourceProducer.produceConfluentMessage(outputConfluent);
+        // kafkaSourceProducer.produceConfluentMessage(outputConfluent);
 
-        log.info("Consumed Confluent kafka event: " + outputConfluent);
     }
 
     @StreamListener(KafkaInputSink.INPUT_SCS)
@@ -47,8 +46,6 @@ public class KafkaSinkConsumer {
                 .build();
 
         kafkaSourceProducer.produceScsMessage(outputSCS);
-
-        log.info("Consumed SCS kafka event: " + inputSCS);
     }
 
 }

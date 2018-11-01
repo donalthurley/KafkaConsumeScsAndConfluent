@@ -9,14 +9,21 @@ spring:
         binder:
           brokers: PLAINTEXT://192.168.99.100:9092
           useNativeDecoding: true
+          useNativeEncoding: true
         bindings:
           inputConfluent:
             consumer:
               configuration:
                 schema.registry.url: http://192.168.99.100:8081
                 specific.avro.reader: true
-                key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+                key.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
                 value.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+          outputConfluent:
+            producer:
+              configuration:
+                schema.registry.url: http://192.168.99.100:8081
+                key.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+                value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
 
       bindings:
         inputConfluent:

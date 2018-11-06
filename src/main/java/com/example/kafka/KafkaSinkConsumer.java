@@ -16,7 +16,6 @@ import static org.apache.kafka.common.requests.DeleteAclsResponse.log;
  * Created by HurleyD on 08/08/2018.
  */
 @EnableBinding(KafkaInputSink.class)
-@EnableSchemaRegistryClient
 @Slf4j
 public class KafkaSinkConsumer {
 

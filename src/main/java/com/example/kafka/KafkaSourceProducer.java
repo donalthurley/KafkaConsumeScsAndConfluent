@@ -14,7 +14,6 @@ import org.springframework.messaging.support.MessageBuilder;
  */
 @Slf4j
 @EnableBinding(KafkaOutputSource.class)
-@EnableSchemaRegistryClient
 public class KafkaSourceProducer {
 
     @Autowired
